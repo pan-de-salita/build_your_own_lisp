@@ -1,0 +1,14 @@
+# Describe textually a grammar for decimal numbers such as `0.01` or `52.221`.
+int: 0-9*;
+decimal: <int>* "." <int>*;
+
+# Describe textually a gramamr for web URLs such as `http://www.buildyourownlisp.com`.
+scheme: "http" | "https";
+authority: "www" "." <identifier> "." <domain>;
+url: scheme "://" authority;
+
+# Describe a grammar for json.
+key: str;
+value: any;
+key-value_pair: key ":" pair;
+object: "{" <key-value_pair>* "}";
